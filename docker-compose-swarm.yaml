@@ -2,22 +2,18 @@ version: "3.8"
 
 services: 
  web:
-  build:
-   context: .
-   dockerfile: Dockerfile.web
+  image: nginx-app-web
+  deploy:
+    replicas: 3
   ports:
    - 8080:80
   volumes:
    - "/home/vagrant/BGAppDockerExercise/web:/var/www/html:ro"
   networks:
    - app-network
-  depends_on:
-   - db
 
  db:
-  build:
-   context: .
-   dockerfile: Dockerfile.db
+  image: mariadb-php-db
   networks:
    - app-network
   environment:
