@@ -2,7 +2,7 @@ version: "3.8"
 
 services: 
  web:
-  image: nginx-app-web
+  image: westfy/nginx-app-web:latest
   deploy:
     replicas: 3
   ports:
@@ -13,7 +13,7 @@ services:
    - app-network
 
  db:
-  image: mariadb-php-db
+  image: westfy/mariadb-php-db:latest
   networks:
    - app-network
   environment:
