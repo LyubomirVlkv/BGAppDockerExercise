@@ -2,9 +2,9 @@ version: "3.8"
 
 services: 
  web:
-  image: westfy/nginx-app-web:latest
+  image: westfy/nginx-web-app
   deploy:
-    replicas: 3
+     replicas: 3
   ports:
    - 8080:80
   volumes:
@@ -13,11 +13,11 @@ services:
    - app-network
 
  db:
-  image: westfy/mariadb-php-db:latest
+  image: westfy/mariadb-db-app
   networks:
    - app-network
   environment:
-    MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+    MYSQL_ROOT_PASSWORD: 12345
 
 
 networks:
