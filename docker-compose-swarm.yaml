@@ -5,7 +5,7 @@ services:
  web:
   image: westfy/nginx-web-app
   deploy:
-     replices: 2
+     replicas: 2
   ports:
    - 8080:80
   volumes:
